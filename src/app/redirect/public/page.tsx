@@ -1,5 +1,11 @@
 import { redirect } from "next/navigation"
+import { kv } from "@vercel/kv"
 
-export default function Redirect() {
-    redirect("https://chat.whatsapp.com/IC0spAdLS83GYUJ4ZkFF45")
+export default async function Redirect() {
+    const url = await kv.get("cms:public-whatsapp")
+    if (!url) {
+        return <>Ayo What? no public whatsapp key set. Contact Delta core for link</>
+    }
+    
+    redirect(url as string)
 }
