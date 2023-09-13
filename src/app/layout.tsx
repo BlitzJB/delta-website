@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+        <title>Delta</title>
       </head>
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
