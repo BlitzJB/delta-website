@@ -3,7 +3,7 @@ import { kv } from '@vercel/kv'
 export default async function Home() {
     
     return (<>
-        <div className="bg-neutral-900 text-neutral-300 md:p-40 py-24 px-12 h-screen overflow-hidden">
+        <div className="bg-neutral-900 text-neutral-300 md:p-40 py-16 px-8 h-screen overflow-hidden">
             <div className="flex items-center ">
                 <img src="favicon.svg" alt="" className="h-12" />
                 <div className="text-2xl ml-2 font-bold">
@@ -33,7 +33,7 @@ const DeltaCoreShowcase = async () => {
     let deltaCoreMembers = await kv.get('cms:delta-core-members') as DeltaCoreMember[]
 
     return <>
-        <div className='flex md:-ml-4 flex-col md:flex-row'>
+        <div className='flex md:-ml-4 flex-col md:flex-row pb-20'>
             {
                 deltaCoreMembers.map(member => <DeltaCoreMember {...member} />)
             }
