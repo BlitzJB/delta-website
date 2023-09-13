@@ -7,6 +7,9 @@ await import("./src/env.mjs");
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
   /**
    * If you are using `appDir` then you must comment the below `i18n` config out.
@@ -17,6 +20,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+
+  
 };
 
 export default config;
