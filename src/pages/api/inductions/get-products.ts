@@ -2,6 +2,11 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function getProducts(req: NextApiRequest, res: NextApiResponse) {
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS'); 
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+
     return res.status(200).json({
         "laptops": [
             {
