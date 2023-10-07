@@ -7,7 +7,7 @@ export interface Post {
     content: string;
     createdLat: string;
     createdLong: string;
-    other: string;
+    other?: string; // can be anything. hint: store additional data as json string if needed
 }
 
 export default async function getProducts(req: NextApiRequest, res: NextApiResponse) {
